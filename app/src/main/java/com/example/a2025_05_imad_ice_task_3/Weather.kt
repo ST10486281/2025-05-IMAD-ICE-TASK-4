@@ -12,6 +12,7 @@ class Weather : AppCompatActivity() {
     // Parallel arrays
     private val days = arrayOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
     private var maxTemps = arrayOf(25, 29, 22, 24, 20, 18, 16)
+    private val conditions = arrayOf("Sunny", "Cloudy", "Rainy", "Sunny", "Windy", "Rainy", "Clear")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +25,9 @@ class Weather : AppCompatActivity() {
         // Display each day and temperature
         var allData = ""
         for (i in days.indices) {
-            allData += "${days[i]}: ${maxTemps[i]}°C\n"
+            allData += "${days[i]}: ${maxTemps[i]}°C - ${conditions[i]}\n"
         }
+
         weekDataTextView.text = allData
 
         // Calculate average
